@@ -3,12 +3,15 @@ const os = require("os");
 const { MongoClient } = require("mongodb");
 
 const app = express();
+app.set("view engine", "ejs");
+app.set("views", "./view");
 let db;
 
 app.get("/", async (req, res) => {
-	const query = await db.collection("test").find().toArray();
+	const query = await db.collection("animals").find().toArray();
 
-	res.send(query);
+	// res.send(`<button>${query.map((ani) => ani.name)}</button>`);
+	res.render("home");
 });
 
 async function start() {
