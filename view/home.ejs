@@ -1,1 +1,6 @@
-Hello Templete Engine
+<h1> Welcome Animals <h1>
+	<ul>
+		<% query.forEach(a=>{%>
+		<li> <%= a.name%> - <%= a.species%></li>
+			<% }) %>
+	</ul>
