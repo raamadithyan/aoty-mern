@@ -19,6 +19,12 @@ app.get("/admin", (req, res) => {
 	res.render("admin");
 });
 
+app.get("/api/topalbums", async (req, res) => {
+	const query = await db.collection("topalbums").find().toArray();
+
+	res.json(query);
+});
+
 async function start() {
 	const client = new MongoClient(
 		"mongodb+srv://raamadithyan:raamadithyan@cluster0.r8sszts.mongodb.net/AmazingMernApp?retryWrites=true&w=majority",
