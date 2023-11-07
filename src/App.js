@@ -15,7 +15,7 @@ function App() {
 	}, []);
 
 	return (
-		<div style={{ backgroundColor: "pink" }}>
+		<div className="hello">
 			{topalbums.map((ta) => {
 				return <AlbumCard key={ta._id} topalbums={ta} />;
 			})}
