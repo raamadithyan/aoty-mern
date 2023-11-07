@@ -15,7 +15,7 @@ function App() {
 	}, []);
 
 	return (
-		<div>
+		<div className="border-4 border-green-500 flex gap-12 w-[80%]">
 			{topalbums.map((ta) => {
 				return <AlbumCard key={ta._id} topalbums={ta} />;
 			})}
