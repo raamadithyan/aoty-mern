@@ -15,7 +15,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className="hello">
+		<div>
 			{topalbums.map((ta) => {
 				return <AlbumCard key={ta._id} topalbums={ta} />;
 			})}
