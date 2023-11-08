@@ -15,11 +15,18 @@ function App() {
 	}, []);
 
 	return (
-		<div className="border-4 border-green-500 flex gap-12 w-[80%]">
-			{topalbums.map((ta) => {
-				return <AlbumCard key={ta._id} topalbums={ta} />;
-			})}
-		</div>
+		<>
+			<div className="flex flex-col items-center gap-8 ">
+				<button className="bg-green-500 rounded-sm text-white px-4 py-2 ">
+					Add Album
+				</button>
+				<div className=" flex flex-wrap justify-center gap-12 w-[90%]">
+					{topalbums.map((ta) => {
+						return <AlbumCard key={ta._id} topalbums={ta} />;
+					})}
+				</div>
+			</div>
+		</>
 	);
 }
 
