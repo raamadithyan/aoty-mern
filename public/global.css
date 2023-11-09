@@ -18,3 +18,11 @@ body {
 	justify-content: center;
 	padding-top: 64px;
 }
+.modal {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal input {
+	margin-left: 24px;
+	ali
+}

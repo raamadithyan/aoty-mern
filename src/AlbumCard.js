@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 function AlbumCard({ topalbums }) {
 	return (
@@ -17,7 +17,7 @@ function AlbumCard({ topalbums }) {
 					{topalbums.album}
 				</header>
 				<p className="">{topalbums.artist}</p>
-				<p>{topalbums.year}</p>
+				<p className="text-neutral-400">{topalbums.year}</p>
 			</div>
 			<div className="flex gap-4 bg-neutral-900  pt-2 text-sm font-semibold text-white w-[100%]">
 				<button className="px-4 py-2 bg-pink-600 hover:bg-pink-400 rounded-sm w-[100%]">
@@ -31,4 +31,4 @@ function AlbumCard({ topalbums }) {
 	);
 }
 
-export default AlbumCard;
+export default memo(AlbumCard);
