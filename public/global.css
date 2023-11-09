@@ -8,12 +8,21 @@ body {
 	/*display: flex;
 	justify-content: center;
 	align-items: center;*/
+	background-color: black;
 }
 
 #app {
-	border: 4px solid blue;
-	height: 100vh;
+	/*	border: 4px solid blue;*/
+	height: 100%;
 	display: flex;
 	justify-content: center;
-	padding-top: 124px;
+	padding-top: 64px;
+}
+.modal {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal input {
+	margin-left: 24px;
+	ali
 }

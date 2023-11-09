@@ -1,29 +1,29 @@
-import React from "react";
+import React, { memo } from "react";
 
 function AlbumCard({ topalbums }) {
 	return (
-		<section className="[&>*]:border-[1px] [&>*]:border-red-500 overflow-hidden px-4 bg-neutral-800 h-fit   ">
+		<section className=" overflow-hidden p-4 bg-neutral-900 h-fit w-[200px]   ">
 			<div className=" ">
 				<img
 					className=""
-					height={300}
-					width={300}
+					height={200}
+					width={200}
 					src={topalbums.imageurl}
 					alt=""
 				/>
 			</div>
-			<div className="text-white bg-neutral-800">
+			<div className="text-white bg-neutral-900 mt-2">
 				<header className="overflow-hidden whitespace-nowrap text-ellipsis font-bold">
 					{topalbums.album}
 				</header>
 				<p className="">{topalbums.artist}</p>
-				<p>{topalbums.year}</p>
+				<p className="text-neutral-400">{topalbums.year}</p>
 			</div>
-			<div className="flex gap-4 bg-neutral-800 pt-2 text-sm">
-				<button className="px-4 py-2 bg-pink-400 rounded-sm">
+			<div className="flex gap-4 bg-neutral-900  pt-2 text-sm font-semibold text-white w-[100%]">
+				<button className="px-4 py-2 bg-pink-600 hover:bg-pink-400 rounded-sm w-[100%]">
 					Edit
 				</button>
-				<button className="px-4 py-2 bg-red-400 rounded-sm">
+				<button className="px-4 py-2 bg-red-600 hover:bg-red-400 rounded-sm w-[100%]">
 					Delete
 				</button>
 			</div>
@@ -31,4 +31,4 @@ function AlbumCard({ topalbums }) {
 	);
 }
 
-export default AlbumCard;
+export default memo(AlbumCard);
