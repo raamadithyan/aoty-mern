@@ -1,11 +1,16 @@
+import Axios from "axios";
 import React, { memo } from "react";
 
-function AlbumCard({ topalbums }) {
+function AlbumCard({ topalbums, setTopAlbums, id }) {
+	async function handleDelete() {
+		const deleteData = Axios.delete(`/addalbum/${id}`);
+		setTopAlbums((prev) => prev.filter((album) => album._id != id));
+	}
 	return (
-		<section className=" overflow-hidden p-4 bg-neutral-900 h-fit w-[200px]   ">
-			<div className=" ">
+		<section className=" overflow-hidden p-4 bg-neutral-900 h-[324px] w-[200px]    ">
+			<div className="h-[168px]">
 				<img
-					className=""
+					className="w-[168px] h-[168px] object-cover"
 					height={200}
 					width={200}
 					src={topalbums.imageurl}
@@ -23,7 +28,10 @@ function AlbumCard({ topalbums }) {
 				<button className="px-4 py-2 bg-pink-600 hover:bg-pink-400 rounded-sm w-[100%]">
 					Edit
 				</button>
-				<button className="px-4 py-2 bg-red-600 hover:bg-red-400 rounded-sm w-[100%]">
+				<button
+					onClick={handleDelete}
+					className="px-4 py-2 bg-red-600 hover:bg-red-400 rounded-sm w-[100%]"
+				>
 					Delete
 				</button>
 			</div>

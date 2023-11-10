@@ -33,7 +33,14 @@ function App() {
 				)}
 				<div className=" flex flex-wrap justify-center gap-12 w-[90%]">
 					{topalbums.map((ta) => {
-						return <AlbumCard key={ta._id} topalbums={ta} />;
+						return (
+							<AlbumCard
+								key={ta._id}
+								topalbums={ta}
+								setTopAlbums={setTopalbums}
+								id={ta._id}
+							/>
+						);
 					})}
 				</div>
 			</div>
