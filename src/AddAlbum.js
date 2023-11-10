@@ -21,7 +21,8 @@ function AddAlbum({ setOpenmodal, setTopAlbums }) {
 		setArtist("");
 		setYear("");
 		setImageurl("");
-		setOpenmodal(false);
+		if (album && artist && year && imageurl !== "") setOpenmodal(false);
+		else return;
 
 		console.log(data);
 		const newData = await Axios.post(
@@ -31,7 +32,8 @@ function AddAlbum({ setOpenmodal, setTopAlbums }) {
 				headers: { "Content-Type": "application/json" },
 			},
 		);
-		setTopAlbums((prev) => prev.concat([newData.data]));
+		// setTopAlbums((prev) => prev.concat([newData.data]));
+		setTopAlbums((prev) => [...prev, newData.data]);
 	}
 	return (
 		<div

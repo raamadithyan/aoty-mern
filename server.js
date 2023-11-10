@@ -51,6 +51,12 @@ app.post("/addalbum", ourCleanup, async (req, res) => {
 	res.send(newlyCreatedAlbum);
 });
 
+app.delete("/addalbum/:id", async (req, res) => {
+	if (typeof req.params.id != "string") req.params.id = "";
+	db.collection("topalbums").deleteOne({ _id: new ObjectId(req.params.id) });
+	res.send("deleted");
+});
+
 function ourCleanup(req, res, next) {
 	if (typeof req.body.album != "string") req.body.album = "";
 	if (typeof req.body.artist != "string") req.body.artist = "";
